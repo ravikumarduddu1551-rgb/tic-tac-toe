@@ -1,0 +1,86 @@
+body {
+    text-align: center;
+    background-color: #5648;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Container scales down smoothly using max-width */
+.container {
+    max-width: 400px;
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid #b0413e; /* Reduced from 30px for small screens */
+    border-radius: 2rem;
+    box-shadow: 0 0.8rem 0.5rem rgb(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+/* Utilizing Grid layout for perfect 3x3 scaling */
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 15px;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Keeps the board perfectly square */
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: #ffffc7;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.3rem rgb(0, 0, 0, 0.3);
+    font-size: 3rem; /* Fallback size */
+    font-size: min(10vw, 3.5rem); /* Dynamically sizes text based on device width */
+    font-weight: bold;
+    color: #b0413e;
+    aspect-ratio: 1 / 1;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Streamlined top section layout */
+.head {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#msg {
+    font-size: 2rem;
+    font-style: italic;
+    margin: 10px 0;
+    color: rgb(119, 1, 1);
+    display: none; /* Keep it hidden until there is a winner */
+}
+
+#msg.show {
+    display: block;                
+}
+
+#new-game, #reset {
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    color: white;
+    padding: 12px 24px;
+    background-color: #191914;
+    box-shadow: 0px 0px 10px rgb(119, 1, 1);
+}
+
+#reset {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
